@@ -1,10 +1,10 @@
 services:
   strapi:
-    container_name: strapi
+    container_name: strapi-dev
     build:
       context: .
       target: dev
-    image: strapi-cloud-run:latest
+    image: strapi-cloud-run:dev
     restart: unless-stopped
     env_file: .env
     environment:
@@ -32,7 +32,7 @@ services:
       - strapi-db
 
   strapi-db:
-    container_name: strapi-db.postgres
+    container_name: strapi-db-dev.postgres
     image: postgres:14-alpine
     platform: linux/amd64 #for platform error on Apple M1 chips
     restart: always
