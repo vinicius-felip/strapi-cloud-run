@@ -120,5 +120,8 @@ build
 # Secrets
 ############################
 
-.env
-secrets
+.env*
+!.env.example
+
+secrets/**
+!secrets/.gitkeep
